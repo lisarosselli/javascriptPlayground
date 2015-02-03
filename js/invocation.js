@@ -43,3 +43,17 @@ Quo.prototype.getStatus = function() {
 
 var myQuo = new Quo('bewildered');
 console.log(myQuo.getStatus());
+
+// apply invocation pattern
+var array = [3, 4];
+var sum = add.apply(null, array);
+
+var someStatus = { // does not inherit from the Quo.prototype
+	status : 'Good!'
+}
+var somethingElse = {
+	noStatus : "Bad"
+}
+var status = Quo.prototype.getStatus.apply(someStatus);
+var badStatus = Quo.prototype.getStatus.apply(somethingElse); // does not have status property
+console.log(status);
