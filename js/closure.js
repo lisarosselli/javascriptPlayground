@@ -1,3 +1,5 @@
+'use strict';
+
 // ahh protected variables
 // this nearly feels class-like
 // this is not assigning a function to obj2

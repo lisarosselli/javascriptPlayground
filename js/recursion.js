@@ -1,3 +1,5 @@
+'use strict';
+
 // typical recursive factorial function
 // js is not picky about not initially invoking
 // the factorial method with only 1 of 2 params
