@@ -19,7 +19,31 @@ var obj2 = (function() {
 	};
 }());
 
+// Proper closure (psst, encapsulation)
+// the access to the status property is not
+// access to a 'copy' of it, it is access
+// to the property itself. The returned function
+// has access to the context in which it
+// was created: closure.
+var Quo2 = function(param) {
+  var status = param;
+  
+  return {
+    getStatus: function() {
+      return status;
+    },
+    setStatus: function(value) {
+      status = value;
+      return status;
+    },
+    sayStatus: function() {
+      alert(status);
+    }
+  };
+};
+
 // fade to white, with closure
+/*
 var fade = function (node) {
 	var level = 1;
 	var step = function() {
@@ -33,3 +57,4 @@ var fade = function (node) {
 	setTimeout(step, 100);
 };
 fade(document.body);
+*/
