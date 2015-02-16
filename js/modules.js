@@ -44,10 +44,14 @@ var Module3 = (function() {
   var publicMethod = function() {
     //public
     console.log(privateValue1);
+    // returning this object will allow for cascade
+    return this;
   };
   
   var anotherMethod = function() {
-    //public
+    console.log("anotherMethod-publicMethod2");
+    // returning this object will allow for cascade
+    return this;
   };
   
   return {
