@@ -9,13 +9,21 @@ var singleton = {
   }
 };
 
+// notice the assignment, not key/value pairs
+// notice the use of 'this', that is a must for constructor functions
 function MyObject() {
   //var prop1 = 'property one'; // this will not exist on your object
+  var _prop1 = "private?"; // var is how you set up private properties
+  
   this.prop2 = 'property two'; 
   this.logMe = function() {
     console.log("MyObject logging "+this.prop2);
   };
+  this.getProp1 = function() { // exposing a private property through a function
+    return _prop1;
+  }
 };
+
 
 // redefining a built-in JS function here
 // but i don't think other devs on your team would expect
